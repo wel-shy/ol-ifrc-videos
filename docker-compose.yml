@@ -1,0 +1,8 @@
+version: '2'
+services:
+  website:
+    build: .
+    ports:
+      - 3333:80
+    volumes:
+      - "./web:/app/web"
