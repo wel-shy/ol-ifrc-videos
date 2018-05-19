@@ -19,7 +19,7 @@ let user = {}
 $(document).ready(function () {
   console.log('ready!')
 
-  getWeather(timbutLoc.lat, timbutLoc.lon, 'timbut')
+  // getWeather(timbutLoc.lat, timbutLoc.lon, 'timbut')
 
   getLocation()
 
@@ -39,7 +39,7 @@ function getWeather (lon, lat, loc) {
   $.ajax({
     type: 'GET',
     dataType: 'json',
-    url: `http://localhost:3333/api/weather/${lon}/${lat}`,
+    url: `http://localhost:3333/api/weather/${lat}/${lon}`,
     success: function (response) {
       switch (loc) {
         case 'timbut':
@@ -82,5 +82,53 @@ function showPosition (position) {
   userLoc.lat = position.coords.latitude
   userLoc.lon = position.coords.longitude
 
-  getWeather(position.coords.latitude, position.coords.longitude, 'york')
+  getPostCode(userLoc.lat, userLoc.lon)
+
+  // getWeather(position.coords.latitude, position.coords.longitude, 'york')
+}
+
+function getPostCode (lat, lon) {
+  $.ajax({
+    type: 'GET',
+    dataType: 'json',
+    url: `https://api.postcodes.io/postcodes?lon=${lon}=&lat=${lat}`,
+    success: function (response) {
+      console.log(response)
+      let postcode = response.result[0].postcode
+      userLoc.postcode = postcode
+
+      getFloodRisk(postcode)
+    }
+  })
+}
+
+function getFloodRisk (postcode) {
+  $.ajax({
+    type: 'GET',
+    url: 'http://localhost:3333/static/data/flood_york.csv',
+    dataType: 'text',
+    success: function (data) {
+      const csv = processCSV(data)
+      const risk = csv[postcode].risk
+      console.log(risk)
+
+      user.risk = risk
+    }
+  })
+}
+
+function processCSV (data) {
+  const allTextLines = data.split(/\r\n|\n/)
+  let lines = {}
+
+  for (let i = 0; i < allTextLines.length; i++) {
+    let rline = allTextLines[i].split(',')
+    lines[rline[0]] = {
+      risk: rline[2],
+      lat: rline[8],
+      lon: rline[9]
+    }
+  }
+
+  return lines
 }
