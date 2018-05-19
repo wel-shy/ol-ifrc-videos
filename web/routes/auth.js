@@ -3,11 +3,9 @@ const path = require('path')
 require('dotenv').config({path: path.join(__dirname, '/./../.env')})
 
 module.exports = function (app, passport) {
-  console.log('loading routes')
   let routes = new express.Router()
 
   routes.get('/profile', function (req, res) {
-    console.log('getting profile')
     res.send(req.user)
   })
 

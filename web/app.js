@@ -25,8 +25,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'))
 })
 
-// app = routes(app)
-console.log(passport)
 app.use('/auth', require('./routes/auth')(app, passport))
 app.use('/api', require('./routes/api')(app))
 
