@@ -4,12 +4,22 @@
 let weatherYork = {}
 let weatherTimbut = {}
 
+const timbutLoc = {
+  lat: 2.003354,
+  lon: 117.332246
+}
+
+let userLoc = {
+  lat: 1,
+  lon: 1
+}
+
 let user = {}
 
 $(document).ready(function () {
   console.log('ready!')
 
-  getWeather(2.003354, 117.332246, 'timbut')
+  getWeather(timbutLoc.lat, timbutLoc.lon, 'timbut')
 
   getLocation()
 
@@ -68,6 +78,9 @@ function getLocation () {
 function showPosition (position) {
   console.log(`Latitude: ${position.coords.latitude}`)
   console.log(`Longitude: ${position.coords.longitude}`)
+
+  userLoc.lat = position.coords.latitude
+  userLoc.lon = position.coords.longitude
 
   getWeather(position.coords.latitude, position.coords.longitude, 'york')
 }
