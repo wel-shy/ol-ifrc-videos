@@ -2,7 +2,11 @@
 <html lang="en" dir="ltr">
 
 <head>
+	<meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data: 'unsafe-inline'; connect-src * 'unsafe-inline'; frame-src *">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="/static/js/app.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/main.css">
 	<meta charset="utf-8">
 	<title>IFRC &amp; You</title>
 </head>
@@ -20,5 +24,58 @@
 			</div>
 		</div>
 	</section>
+
+	<section class="section">
+		<div class="columns">
+			<div class="container">
+				<div class="column is-one-third">
+					<div class="field">
+						<label class="label">Name</label>
+						<div class="control">
+							<input id="user-name" class="input" type="text" placeholder="e.g Alex Smith">
+						</div>
+					</div>
+
+					<div class="field">
+						<label class="label">Email</label>
+						<div class="control">
+							<input id="user-email" class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+						</div>
+					</div>
+
+					<div class="field">
+						<label class="label">Age</label>
+						<div class="control">
+							<input id="user-age" class="input" type="text" placeholder="e.g. alexsmith@gmail.com">
+						</div>
+					</div>
+
+					<div class="field">
+						<label class="label">Gender</label>
+            <p class="control">
+              <select id="user-gender" class="select">
+                <option>
+                  Male
+                </option>
+                <option>
+                  Female
+                </option>
+                <option>
+                  Other
+                </option>
+              </select>
+            </p>
+					</div>
+				</div>
+
+				<div class="field">
+					<div class="control">
+						<button id="submit-details" class="button is-link">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </body>
+
 </html>

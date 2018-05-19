@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss web/scss/style.scss web/static/css/main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "repository": {
     "type": "git",
@@ -26,8 +28,12 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "cors": "^2.8.4",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
-    "nodemon": "^1.17.4"
+    "node-sass": "^4.9.0",
+    "nodemon": "^1.17.4",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1"
   }
 }
