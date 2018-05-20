@@ -3,27 +3,22 @@
 
 let weatherYork = {}
 let weatherTimbut = {}
-
 // in tonnes
 const averageUserMonthlyWaste = 20578.58
-
 // in litres
 // https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/69582/pb6655-uk-sewage-treatment-020424.pdf
 const averageUserSewageTreatmentPerDay = 16.75807434
-
 const timbutLoc = {
   lat: 2.003354,
   lon: 117.332246
 }
-
 let userLoc = {
   lat: 1,
   lon: 1
 }
-
 let user = {}
-
 let userVideo = ''
+let userNextChoice = ''
 
 $(document).ready(function () {
   console.log('ready!')
@@ -46,6 +41,21 @@ $(document).ready(function () {
     user = details
     userVideo = decideUserDemographic(user)
     console.log('User to see:', userVideo)
+  })
+
+  $('#flood-choice').click(function () {
+    userNextChoice = 'flood'
+    console.log('User to see flood next')
+  })
+
+  $('#waste-choice').click(function () {
+    userNextChoice = 'waste'
+    console.log('User to see waste next')
+  })
+
+  $('#sanitisation-choice').click(function () {
+    userNextChoice = 'sanitisation'
+    console.log('User to see sanitisation next')
   })
 })
 
