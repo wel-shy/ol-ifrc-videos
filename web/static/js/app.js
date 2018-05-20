@@ -40,6 +40,9 @@ $(document).ready(function () {
 
     user = details
     userVideo = decideUserDemographic(user)
+
+    $('#user-demographic').hide()
+
     console.log('User to see:', userVideo)
   })
 
