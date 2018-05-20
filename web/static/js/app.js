@@ -4,7 +4,11 @@
 let weatherYork = {}
 let weatherTimbut = {}
 
+// in tonnes
 const averageUserMonthlyWaste = 20578.58
+
+// in litres
+const averageUserSewageTreatmentPerDay = 16.75807434
 
 const timbutLoc = {
   lat: 2.003354,
