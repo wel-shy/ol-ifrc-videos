@@ -122,11 +122,15 @@ function getPostCode (lat, lon) {
     dataType: 'json',
     url: `https://api.postcodes.io/postcodes?lon=${lon}=&lat=${lat}`,
     success: function (response) {
-      console.log(response)
-      let postcode = response.result[0].postcode
-      userLoc.postcode = postcode
 
-      getFloodRisk(postcode)
+      if (response.result) {
+        let postcode = response.result[0].postcode
+        userLoc.postcode = postcode
+
+        getFloodRisk(postcode)
+      } else {
+        $('#user-flood-risk').html(`Your risk of flood is: None`)
+      }
     }
   })
 }
