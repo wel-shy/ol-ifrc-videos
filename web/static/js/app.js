@@ -8,6 +8,7 @@ let weatherTimbut = {}
 const averageUserMonthlyWaste = 20578.58
 
 // in litres
+// https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/69582/pb6655-uk-sewage-treatment-020424.pdf
 const averageUserSewageTreatmentPerDay = 16.75807434
 
 const timbutLoc = {
@@ -27,7 +28,10 @@ let userVideo = ''
 $(document).ready(function () {
   console.log('ready!')
 
-  // getWeather(timbutLoc.lat, timbutLoc.lon, 'timbut')
+  $('#user-waste').html(`Your city processes ${Math.round(averageUserMonthlyWaste)} tonnes of waste per month.`)
+  $('#user-sewage').html(`Your country processes ${Math.round(averageUserSewageTreatmentPerDay)} litres of sewage per person per day.`)
+
+  getWeather(timbutLoc.lat, timbutLoc.lon, 'timbut')
 
   getLocation()
 
@@ -47,17 +51,19 @@ $(document).ready(function () {
 
 function getWeather (lon, lat, loc) {
   console.log('Getting Weather')
+  console.log('Getting weather from: ', `http://localhost:3333/api/weather/${lon}/${lat}`)
   $.ajax({
     type: 'GET',
     dataType: 'json',
-    url: `http://localhost:3333/api/weather/${lat}/${lon}`,
+    url: `http://localhost:3333/api/weather/${lon}/${lat}`,
     success: function (response) {
+      let weatherString = ''
       switch (loc) {
         case 'timbut':
           weatherTimbut.summary = response.data.summary
           weatherTimbut.temp = response.data.temp
 
-          let weatherString = `${response.data.summary}, ${response.data.temp} &deg;C`
+          weatherString = `${response.data.summary}, ${response.data.temp} &deg;C`
           $('#weather-timbut').html(weatherString)
           break
         case 'york':
@@ -96,11 +102,11 @@ function showPosition (position) {
 
   getPostCode(userLoc.lat, userLoc.lon)
 
-  // getWeather(position.coords.latitude, position.coords.longitude, 'york')
+  getWeather(position.coords.latitude, position.coords.longitude, 'york')
 }
 
 function getPostCode (lat, lon) {
-  console.log('Getting postcode')
+  console.log('Getting postcode from: ', `https://api.postcodes.io/postcodes?lon=${lat}=&lat=${lon}`)
   $.ajax({
     type: 'GET',
     dataType: 'json',
@@ -127,6 +133,8 @@ function getFloodRisk (postcode) {
       console.log(risk)
 
       user.risk = risk
+
+      $('#user-flood-risk').html(`Your risk of flood is: ${risk}`)
     }
   })
 }
