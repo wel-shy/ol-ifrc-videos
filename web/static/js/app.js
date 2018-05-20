@@ -4,6 +4,8 @@
 let weatherYork = {}
 let weatherTimbut = {}
 
+const averageUserMonthlyWaste = 20578.58
+
 const timbutLoc = {
   lat: 2.003354,
   lon: 117.332246
@@ -15,6 +17,8 @@ let userLoc = {
 }
 
 let user = {}
+
+let userVideo = ''
 
 $(document).ready(function () {
   console.log('ready!')
@@ -32,10 +36,13 @@ $(document).ready(function () {
     }
 
     user = details
+    userVideo = decideUserDemographic(user)
+    console.log('User to see:', userVideo)
   })
 })
 
 function getWeather (lon, lat, loc) {
+  console.log('Getting Weather')
   $.ajax({
     type: 'GET',
     dataType: 'json',
@@ -68,6 +75,7 @@ function getWeather (lon, lat, loc) {
  * @return {[type]} [description]
  */
 function getLocation () {
+  console.log('Getting location')
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition)
   } else {
@@ -88,6 +96,7 @@ function showPosition (position) {
 }
 
 function getPostCode (lat, lon) {
+  console.log('Getting postcode')
   $.ajax({
     type: 'GET',
     dataType: 'json',
@@ -103,6 +112,7 @@ function getPostCode (lat, lon) {
 }
 
 function getFloodRisk (postcode) {
+  console.log('Getting flood risk')
   $.ajax({
     type: 'GET',
     url: 'http://localhost:3333/static/data/flood_york.csv',
@@ -131,4 +141,26 @@ function processCSV (data) {
   }
 
   return lines
+}
+
+function getUserWasteMonthly () {
+  return averageUserMonthlyWaste
+}
+
+function decideUserDemographic (user) {
+  console.log('Deciding user demographic')
+  if (user.age < 25) {
+    return 'child'
+  }
+  if (user.age >= 25 && user.age < 65 && user.gender === 'male') {
+    return 'male'
+  }
+  if (user.age >= 25 && user.age < 65 && user.gender === 'female') {
+    return 'female'
+  }
+  if (user.age >= 65) {
+    return 'older-people'
+  }
+
+  return 'child'
 }
