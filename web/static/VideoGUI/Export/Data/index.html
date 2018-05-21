@@ -1,0 +1,111 @@
+
+<html>
+	<head>
+		<title>VideoGUI</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+ 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+
+		<script src="lib/OBBEngine.js"> </script>
+		<script src="lib/FunctionsModule.js"></script>
+		<script src="lib/EngineModule.js"></script>
+
+		<script src="input.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+	</head>
+	<body>
+		<section class="section" id="user-demographic">
+			<div class="columns">
+				<div class="container">
+					<div class="column is-one-third">
+	          <h1 class="is-size-2">About You</h1>
+						<div class="field">
+							<label class="label">Name</label>
+							<div class="control">
+								<input id="user-name" class="input" type="text" placeholder="e.g. Alex Smith">
+							</div>
+						</div>
+
+						<div class="field">
+							<label class="label">Age</label>
+							<div class="control">
+								<input id="user-age" class="input" type="text" placeholder="e.g. 24">
+							</div>
+						</div>
+
+						<div class="field">
+							<label class="label">Gender</label>
+	            <p class="control">
+	              <select id="user-gender" class="select">
+	                <option>
+	                  Male
+	                </option>
+	                <option>
+	                  Female
+	                </option>
+	                <option>
+	                  Other
+	                </option>
+	              </select>
+	            </p>
+						</div>
+					</div>
+
+					<div class="field">
+						<div class="control">
+							<button id="submit-details" class="button is-link">Submit</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+		<div class="story-wrapper">
+
+			<canvas id="story" class="story-canvas" width="1280" height="800" ></canvas>
+			<!-- <section class="section">
+				<div class="container" id="decision-buttons">
+					<h1 class="is-size-2">What Next?</h1> -->
+					<!-- <div id="decision-buttons"> -->
+			<button id="flood-choice" class="decision-buttons">Floods</button>
+			<button id="waste-choice" class="decision-buttons">Waste</button>
+			<button id="sanitation-choice" class="decision-buttons">Sanitation</button>
+
+			<p id="tempHere" class="is-size-3" style="display: none; color: white;">York: <span id="weather-york">Unkown</span></p>
+      <p id="tempTimbut" class="is-size-3" style="display: none; color: white;">Timbut Melayuk: <span id="weather-timbut">Unkown</span></p>
+
+			<p id="flood-risk" class="is-size-3" id="user-flood-risk">Unkown</p>
+
+			<p id="text-1a" class="is-size-3" style="display: none;">This is Timbut Melaya, in Indonesia</p>
+
+			<p id="text-1b" class="is-size-3" style="display: none;">Timbut Melaya is regularly struck by devastating floods, but with some help from PMI, things have been getting better.
+			<br/><br/>Here are some videos made by someone like you.</p>
+
+			<p id="text-2" class="is-size-3" style="display: none;">This is what the Indonesian Red Cross has achieved in Timbut Melaya: improving hygiene, and access to clean water.</p>
+
+			<p id="text-3" class="is-size-3" style="display: none;">There is still away to go, let's hear the villagers' concerns about the floods.</p>
+					<!-- </div> -->
+
+				<!-- </div>
+			</section> -->
+		</div>
+		<script>
+			// var canvas = document.getElementById("story");
+			// window.engine = new OBBEngine();
+			// engine.initRendererWithCanvas(canvas);
+			// window.renderer = engine.getRenderer();
+			// renderer.setInteractionFunctions(functionTree["Interaction"]);
+			// engine.restoreEngine(engineModule);
+			// engine.restoreFunctions(functionTree);
+			// engine.initialise(() => {
+			// 	renderer.start();
+			// })
+			window.SetVisible = function(element, isVisible)
+    		{
+    			document.getElementById(element).style.display = isVisible ? 'block' : 'none';
+    		}
+		</script>
+	</body>
+</html>

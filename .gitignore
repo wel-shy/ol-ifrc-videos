@@ -1,3 +1,10 @@
 /node_modules
 .env
 ~$*.xlsx
+web/static/VideoGUI/Data
+web/static/VideoGUI/Export/Data/video
+web/static/VideoGUI/Export/Data/VideoGUI/video
+web/static/VideoGUI/Thumbnails
+web/static/VideoGUI/Export/Data/lib
+web/static/VideoGUI/Export/Data/data
+web/static/VideoGUI/Export/Data/css

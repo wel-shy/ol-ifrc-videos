@@ -30,35 +30,38 @@ $(document).ready(function () {
 
   getLocation()
 
-  $('#submit-details').click(function () {
-    let details = {
-      name: $('#user-name').val(),
-      email: $('#user-email').val(),
-      age: $('#user-age').val(),
-      gender: $('#user-gender').val()
-    }
-
-    user = details
-    userVideo = decideUserDemographic(user)
-
-    $('#user-demographic').hide()
-
-    console.log('User to see:', userVideo)
-  })
+  // $('#submit-details').click(function () {
+  //   let details = {
+  //     name: $('#user-name').val(),
+  //     email: $('#user-email').val(),
+  //     age: $('#user-age').val(),
+  //     gender: $('#user-gender').val()
+  //   }
+  //
+  //   user = details
+  //   userVideo = decideUserDemographic(user)
+  //
+  //   $('#user-demographic').hide()
+  //
+  //   console.log('User to see:', userVideo)
+  // })
 
   $('#flood-choice').click(function () {
     userNextChoice = 'flood'
     console.log('User to see flood next')
+    $('.decision-buttons').hide()
   })
 
   $('#waste-choice').click(function () {
     userNextChoice = 'waste'
     console.log('User to see waste next')
+    $('.decision-buttons').hide()
   })
 
   $('#sanitation-choice').click(function () {
     userNextChoice = 'sanitation'
     console.log('User to see sanitation next')
+    $('.decision-buttons').hide()
   })
 })
 
@@ -142,7 +145,7 @@ function getFloodRisk (postcode) {
   console.log('Getting flood risk')
   $.ajax({
     type: 'GET',
-    url: 'http://localhost:3333/static/data/flood_york.csv',
+    url: 'http://localhost:3333/video/data/flood_york.csv',
     dataType: 'text',
     success: function (data) {
       const csv = processCSV(data)
@@ -181,10 +184,10 @@ function decideUserDemographic (user) {
   if (user.age < 25) {
     return 'child'
   }
-  if (user.age >= 25 && user.age < 65 && user.gender === 'male') {
+  if (user.age >= 25 && user.age < 65 && user.gender === 'Male') {
     return 'male'
   }
-  if (user.age >= 25 && user.age < 65 && user.gender === 'female') {
+  if (user.age >= 25 && user.age < 65 && user.gender === 'Female') {
     return 'female'
   }
   if (user.age >= 65) {

@@ -1,0 +1,27 @@
+
+<html>
+	<head>
+		<title>VideoGUI</title>
+		<script src="./lib/OBBEngine.js"> </script>
+		<script src="./lib/FunctionsModule.js"></script>
+		<script src="./lib/EngineModule.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+	</head>
+	<body>
+		<div class="story-wrapper">
+			<canvas id="story" class="story-canvas" width="1920" height="1080" ></canvas>
+		</div>
+		<script>
+			var canvas = document.getElementById("story");
+			window.engine = new OBBEngine();
+			engine.initRendererWithCanvas(canvas);
+			window.renderer = engine.getRenderer();
+			renderer.setInteractionFunctions(functionTree["Interaction"]);
+			engine.restoreEngine(engineModule);
+			engine.restoreFunctions(functionTree);
+			engine.initialise(() => {
+				renderer.start();
+			})
+		</script>
+	</body>
+</html>
