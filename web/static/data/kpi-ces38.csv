@@ -1,0 +1,33 @@
+KpiId,KpiName,Value,DataType,Period,StartDate,EndDate,CollectionFrequency
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",102460.00 Number,Number,2010/2011,01/04/2010,31/03/2011,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",101070.00 Number,Number,2011/2012,01/04/2011,31/03/2012,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",97000.00 Number,Number,2012/2013,01/04/2012,31/03/2013,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",93830.00 Number,Number,2013/2014,01/04/2013,31/03/2014,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",54430.00 Number,Number,2013/2014_Q2,01/07/2013,30/09/2013,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",52770.00 Number,Number,2013/2014_Q3,01/10/2013,31/12/2013,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",52470.00 Number,Number,2013/2014_Q4,01/01/2014,31/03/2014,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",93430.00 Number,Number,2014/2015,01/04/2014,31/03/2015,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",26657.86 Number,Number,2014/2015_Q1,01/04/2014,30/06/2014,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",25047.59 Number,Number,2014/2015_Q2,01/07/2014,30/09/2014,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",20219.88 Number,Number,2014/2015_Q3,01/10/2014,31/12/2014,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",93430.00 Number,Number,2014/2015_Q4,01/01/2015,31/03/2015,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",96949.00 Number,Number,2015/2016,01/04/2015,31/03/2016,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",26957.00 Number,Number,2015/2016_Q1,01/04/2015,30/06/2015,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",52647.00 Number,Number,2015/2016_Q2,01/07/2015,30/09/2015,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",74760.00 Number,Number,2015/2016_Q3,01/10/2015,31/12/2015,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",96949.00 Number,Number,2015/2016_Q4,01/01/2016,31/03/2016,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",94594.00 Number,Number,2016/2017,01/04/2016,31/03/2017,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",26450.00 Number,Number,2016/2017_Q1,01/04/2016,30/06/2016,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",52150.00 Number,Number,2016/2017_Q2,01/07/2016,30/09/2016,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",73749.00 Number,Number,2016/2017_Q3,01/10/2016,31/12/2016,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",94594.00 Number,Number,2016/2017_Q4,01/01/2017,31/03/2017,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",26390.00 Number,Number,2017/2018_Q1,01/04/2017,30/06/2017,Quarterly
+CES38,"Total tonnes of municipal waste collected (household, commercial, prescribed and inert waste) - (YTD)",52010.00 Number,Number,2017/2018_Q2,01/07/2017,30/09/2017,Quarterly
+,,,,,,,
+,,,,,,,
+,,26450,,,,,
+,,52150,,,,,
+,,73749,,,,,
+,,94594,,,,,
+,,246943," 20,578.58 ",,,,
+,,," 198,051.00 ",,,,
